@@ -1,19 +1,23 @@
+'use strict';
 console.log('app.js is connected.');
 
-let hourNow = prompt('What time is it? 0-23');
 
+let userName = prompt('What is your name?');
+let confirmMessage = confirm('Do you want to continue?');
+let hourNow = prompt('What time is it, in Military time?');
 let greeting;
+
 if(hourNow > 18 && hourNow < 24){
-    greeting = 'Go to Bed';
-} else if(hourNow >12 && hourNow < 18) {
-    greeting = 'Good day sir.';
-} else if( hourNow >= 0 && hourNow < 24){
-    greeting = 'Go to work, and Good Morning.';
+    greeting = 'Good Evening';
+} else if(hourNow >12 && hourNow < 18){
+    greeting = 'Good Afternoon';
+}else if(hourNow > 6 && hourNow <12){
+    greeting = 'Good Morning!, Get some OJ!';
 } else {
-    greeting = 'wait, you didnt give me the right response. Who knows what time it is?';
+    greeting = 'Why arent you in bed!!!! go to sleep';
 }
-console.log(greeting);
-document.write(greeting);
+console.log('this is the greeting',greeting);
+document.write('Welcome ' + userName + ' ' + greeting);
 
 
 //This section below was the if/else logic after we added the Date object and the getHours() method. This was part of Class 6 Demo, to show objects and methods.
@@ -60,3 +64,5 @@ There are more advanced data types that will be introduced in 401.
 variable - a representation or nick name for some type of data.
 
 */
+
+
