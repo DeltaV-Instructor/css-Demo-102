@@ -220,9 +220,8 @@ console.table(typeof(userInput));
 for(i = 0; i < userInputParsed; i++){
   // console.log('proof of life', i);
   let listImage = document.createElement('li');
+  listImage.textContent = `image number ${i + 1}`;
   let image = document.createElement('img');
-
-  
   image.setAttribute('src', 'images/codeImage.png');
   listImage.appendChild(image);
   console.log(listImage);
