@@ -196,20 +196,37 @@
  * How could you use functions to make your code more readable?
  */
 
-
+let imageElement = document.getElementById('imageSection');
 
 
 
 let userInput = prompt('How many images would you like to see?');
-console.log('Our user input is of type: ',typeof(userInput))
-let userInputParsed = parseInt(userInput);
+console.log('Our user input is of type: ',typeof(userInput));
 
+
+let userInputParsed = parseInt(userInput);
 console.log('user input parsed to int: ', userInputParsed)
 
+if(!isNaN(userInputParsed)){
+  console.log('we have a valid number for input');
+} else {
+  userInputParsed = parseInt(prompt('How many images? Enter a Number.'));
+}
+console.table(typeof(userInput));
+//We can talk about how to refactor this using a while loop. 
 
 
 
-
+for(i = 0; i < userInputParsed; i++){
+  // console.log('proof of life', i);
+  let listImage = document.createElement('li');
+  listImage.textContent = `image number ${i + 1}`;
+  let image = document.createElement('img');
+  image.setAttribute('src', 'images/codeImage.png');
+  listImage.appendChild(image);
+  console.log(listImage);
+  imageElement.appendChild(listImage);
+}
 
 
 
